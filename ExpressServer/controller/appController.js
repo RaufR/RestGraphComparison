@@ -1,12 +1,19 @@
-var Country = require("../model/appModel");
+const Employee = require("../model/appModel");
 
-exports.list_all_countries = function (req, res) {
-  Country.getAllCountry(function (err, country) {
+exports.list_all_employees = (req, res) => {
+  Employee.getAllEmployee((err, employee) => {
     console.log("controller");
     if (err) res.send("error happened" + err);
-    console.log("res", country);
+    console.log("res", employee);
 
-    res.send(country);
+    res.send(employee);
+  });
+};
+
+exports.single_employee_detail = (req, res) => {
+  Employee.getEmpByID(req.params.id, (err, employee) => {
+    if (err) res.send(err);
+    res.json(employee);
   });
 };
 

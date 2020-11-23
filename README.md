@@ -7,6 +7,6 @@ Main public repo for master thesis.
 This sub folder contain a running expressJS server without graphql implementation.
 The server should be run with docker and mysql integration.
 
-## seeds
+## data source.
 
-Initial SQL data files.
+https://github.com/datacharmer/test_db

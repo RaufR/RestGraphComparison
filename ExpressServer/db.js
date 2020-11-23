@@ -4,7 +4,7 @@ var DbConf = {
   host: "localhost",
   user: "root",
   password: "root",
-  database: "country_db",
+  database: "employees",
   //port: 3306
 };
 var connection;
@@ -19,7 +19,7 @@ handleDisconnect = () => {
     }
   });
 
-  connection.on("error", function (err) {
+  connection.on("error", (err) => {
     console.log("db error", err);
     if (err.code === "PROTOCOL_CONNECTION_LOST") {
       handleDisconnect(); // lost due to either server restart, or a

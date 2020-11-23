@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-var path = require("path");
-var countriList = require("../controller/appController");
+const path = require("path");
+const CONTROLLER = require("../controller/appController");
 
 global.appRoot = path.resolve("./");
 
@@ -14,9 +14,9 @@ router.route("/").get(function (req, res) {
   //res.sendFile("../index.html");
 });
 
-router.route("/countries").get(countriList.list_all_countries);
+router.route("/employees").get(CONTROLLER.list_all_employees);
 
-//router.route("/countries/:id").get(nameList.read_single_name);
+router.route("/employees/:id").get(CONTROLLER.single_employee_detail);
 
 // router.route("/cities/:?year").get(nameList.read_name_by_year);
 

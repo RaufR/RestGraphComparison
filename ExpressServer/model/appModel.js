@@ -1,7 +1,7 @@
-var sql = require("../db.js");
+const sql = require("../db.js");
 
-var Country = function (country) {
-  this.country = country.country;
+const Employee = (employee) => {
+  this.employee = employee.employee;
   //   this.ethnicity = name.ethnicity;
   //   this.YearOfName = name.YearOfName;
   //   this.NameCount = name.NameCount;
@@ -10,8 +10,8 @@ var Country = function (country) {
   //   this.Ratings = name.Ratings;
 };
 
-Country.getAllCountry = function getAllCountry(result) {
-  sql.query("SELECT * FROM countries LIMIT 0, 10;", function (err, res) {
+Employee.getAllEmployee = getAllEmployee = (result) => {
+  sql.query("SELECT * FROM emp_name LIMIT 0, 10;", function (err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -22,4 +22,15 @@ Country.getAllCountry = function getAllCountry(result) {
   });
 };
 
-module.exports = Country;
+Employee.getEmpByID = getEmpById = (id, result) => {
+  sql.query("SELECT * FROM emp_name WHERE emp_no = ?", id, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
+module.exports = Employee;
