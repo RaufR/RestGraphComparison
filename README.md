@@ -1,4 +1,4 @@
-# CountryServer
+# EmployeeServer
 
 Main public repo for master thesis.
 
