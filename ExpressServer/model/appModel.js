@@ -2,12 +2,10 @@ const sql = require("../db.js");
 
 const Employee = (employee) => {
   this.employee = employee.employee;
-  //   this.ethnicity = name.ethnicity;
-  //   this.YearOfName = name.YearOfName;
-  //   this.NameCount = name.NameCount;
-  //   this.gender = name.gender;
-  //   this.NameRank = name.NameRank;
-  //   this.Ratings = name.Ratings;
+};
+
+const Department = (department) => {
+  this.department = department.department;
 };
 
 Employee.getAllEmployee = getAllEmployee = (result) => {
@@ -16,7 +14,6 @@ Employee.getAllEmployee = getAllEmployee = (result) => {
       console.log("error: ", err);
       result(null, err);
     } else {
-      console.log("countries : ", res);
       result(null, res);
     }
   });
@@ -33,4 +30,26 @@ Employee.getEmpByID = getEmpById = (id, result) => {
   });
 };
 
-module.exports = Employee;
+Department.getAllDepartment = getAllDepartments = (result) => {
+  sql.query("SELECT * FROM departments", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
+Department.getAllManagers = getAllManagers = (result) => {
+  sql.query("SELECT * FROM dept_manager", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
+module.exports = { Employee, Department };

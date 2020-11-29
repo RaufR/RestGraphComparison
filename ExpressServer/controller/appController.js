@@ -1,4 +1,7 @@
-const Employee = require("../model/appModel");
+const Model = require("../model/appModel");
+
+const Employee = Model.Employee;
+const Department = Model.Department;
 
 exports.list_all_employees = (req, res) => {
   Employee.getAllEmployee((err, employee) => {
@@ -14,6 +17,20 @@ exports.single_employee_detail = (req, res) => {
   Employee.getEmpByID(req.params.id, (err, employee) => {
     if (err) res.send(err);
     res.json(employee);
+  });
+};
+
+exports.list_all_departments = (req, res) => {
+  Department.getAllDepartment((err, department) => {
+    if (err) res.send("error happened" + err);
+    res.send(department);
+  });
+};
+
+exports.list_all_managers = (req, res) => {
+  Department.getAllManagers((err, manager) => {
+    if (err) res.send("error happened" + err);
+    res.send(manager);
   });
 };
 

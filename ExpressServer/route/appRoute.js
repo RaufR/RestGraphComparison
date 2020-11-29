@@ -18,8 +18,7 @@ router.route("/employees").get(CONTROLLER.list_all_employees);
 
 router.route("/employees/:id").get(CONTROLLER.single_employee_detail);
 
-// router.route("/cities/:?year").get(nameList.read_name_by_year);
-
-// router.route("/state/:name").get(nameList.deatil_by_name);
+router.route("/departments").get(CONTROLLER.list_all_departments);
+router.route("/managers").get(CONTROLLER.list_all_managers);
 
 module.exports = router;
