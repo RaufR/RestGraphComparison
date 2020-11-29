@@ -6,6 +6,9 @@ Main public repo for master thesis.
 
 This sub folder contain a running expressJS server without graphql implementation.
 The server should be run with docker and mysql integration.
+Follow below guide to setup:
+
+https://github.com/RaufR/EmployeeServer/blob/main/ExpressServer/README.md
 
 ## GraphqlServer
 
