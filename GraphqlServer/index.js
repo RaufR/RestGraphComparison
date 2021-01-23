@@ -1,35 +1,13 @@
 const { ApolloServer, gql } = require("apollo-server");
 const SessionAPI = require("./dataSources/sessions");
+const SpeakerAPI = require("./dataSources/speakers");
 
-const typeDefs = gql`
-  type Query {
-    sessions: [Session]
-  }
+const typeDefs = require("./schema");
 
-  type Session {
-    id: ID!
-    title: String!
-    description: String
-    startsAt: String
-    endsAt: String
-    room: String
-    day: String
-    format: String
-    track: String @deprecated(reason: "No need anymore")
-    level: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    sessions: (parent, args, { dataSources }, info) => {
-      return dataSources.sessionAPI.getSessions();
-    },
-  },
-};
-
+const resolvers = require("./resolvers");
 const dataSources = () => ({
   sessionAPI: new SessionAPI(),
+  speakerAPI: new SpeakerAPI(),
 });
 
 const server = new ApolloServer({ typeDefs, resolvers, dataSources });
