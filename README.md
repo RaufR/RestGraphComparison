@@ -16,7 +16,7 @@ Main public repo for master thesis.
 
 ## RUN GRAPHQL API
 
-3. Open `GraphqlServer` folder in terminal run `npm i`.
+3. Open `GraphqlServer` folder in terminal run `npm i` and then `npm start`
 4. It will boot grahql playground in `http://localhost:4000`"
 
 ## speakers
