@@ -1,19 +1,28 @@
-# EmployeeServer
+# GraphQL benchmark
 
 Main public repo for master thesis.
 
-## ExpressServer
+# Requirements
 
-This sub folder contain a running expressJS server without graphql implementation.
-The server should be run with docker and mysql integration.
-Follow below guide to setup:
+1. Node `^10.15.1`
 
-https://github.com/RaufR/EmployeeServer/blob/main/ExpressServer/README.md
+# Step
+
+## RUN REST API
+
+1. Clone this repo
+2. Open `speaker` folder in terminal run `npm i` and then `npm start`
+3. It will boot REST API in `http://localhost:3000/speakers"`
+
+## RUN GRAPHQL API
+
+3. Open `GraphqlServer` folder in terminal run `npm i`.
+4. It will boot grahql playground in `http://localhost:4000`"
+
+## speakers
+
+Rest API
 
 ## GraphqlServer
 
 Only contains graphql parts which integrate with Express.
-
-## data source.
-
-https://github.com/datacharmer/test_db
