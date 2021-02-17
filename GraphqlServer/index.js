@@ -5,6 +5,7 @@ const SpeakerAPI = require("./dataSources/speakers");
 const typeDefs = require("./schema");
 
 const resolvers = require("./resolvers");
+
 const dataSources = () => ({
   sessionAPI: new SessionAPI(),
   speakerAPI: new SpeakerAPI(),

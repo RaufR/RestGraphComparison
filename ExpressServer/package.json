@@ -1,23 +1,19 @@
 {
-  "name": "HrServerExpress",
-  "version": "0.0.1",
+  "name": "speakers",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "if [[ $NODE_ENV == 'production' ]]; then node app.js; else nodemon app.js; fi "
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
-    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
-    "pug": "2.0.0-beta11"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.1"
+    "lodash": "^4.17.15",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.3",
+    "sequelize": "^5.21.10"
   }
 }
