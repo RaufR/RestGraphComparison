@@ -44,7 +44,7 @@ module.exports = gql`
   }
 
   type Speaker {
-    id: ID!
+    id: ID
     bio: String
     name: String
     Session: [Session]
